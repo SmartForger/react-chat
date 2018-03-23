@@ -23,8 +23,8 @@ class LoginPage extends Component {
       <div className="login-register-page">
         <div className="form">
           <form className="login-form" onSubmit={this.submit}>
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
             <button>login</button>
             <p className="message">Not registered? <Link to="/register">Create an account</Link></p>
           </form>
