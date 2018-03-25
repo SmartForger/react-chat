@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { registerUserAttempt } from '../core/actions';
+import { registerUserAttempt } from '../../core/actions';
 import RegisterReduxForm from './form';
 
 class Register extends Component {
