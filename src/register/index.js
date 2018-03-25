@@ -1,19 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const Register = () => (
-  <div className="login-register-page">
-    <div className="form">
-      <form className="register-form">
-        <input type="email" placeholder="Email Address"/>
-        <input type="text" placeholder="Name"/>
-        <input type="password" placeholder="Password"/>
-        <input type="confirm" placeholder="Confirm Password"/>
-        <button>create</button>
-        <p className="message">Already registered? <Link to="/login">Sign In</Link></p>
-      </form>
-    </div>
-  </div>
-)
+import { registerUserAttempt } from '../core/actions';
+import RegisterReduxForm from './form';
 
-export default Register;
+class Register extends Component {
+  render() {
+    const { registerUser } = this.props; 
+
+    return (
+      <div className="login-register-page">
+        <div className="form">
+          <RegisterReduxForm onSubmit={registerUser} />
+        </div>
+      </div>
+    )
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  registerUser: (data) => {
+    dispatch(registerUserAttempt({
+      email: data.email,
+      name: data.name,
+      password: data.password
+    }));
+  }
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);
