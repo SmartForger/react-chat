@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { loginUserAttempt } from '../core/actions';
+import { loginUserAttempt } from '../../core/actions';
 import LoginReduxForm from './form';
 
 const LoginPage = ({ login }) => (
