@@ -3,10 +3,10 @@ import { Switch, Route, Redirect } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import ReduxToastr from 'react-redux-toastr';
 
-import { ProtectedRoute } from './common/components';
+import { ProtectedRoute, NotFound } from './common/components';
 import Home from './home';
-import Login from './login';
-import Register from './register';
+import Login from './auth/login';
+import Register from './auth/register';
 
 const appRoutes = ({ history }) => (
   <ConnectedRouter history={history}>
@@ -16,6 +16,7 @@ const appRoutes = ({ history }) => (
         <ProtectedRoute path="/home" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
+        <Route path="*" component={NotFound}/>
       </Switch>
       <ReduxToastr
         timeOut={4000}

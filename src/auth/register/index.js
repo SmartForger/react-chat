@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import { registerUserAttempt } from '../../core/actions';
 import RegisterReduxForm from './form';
+import { unauthenticated } from '../../common/components';
 
-class Register extends Component {
-  render() {
-    const { registerUser } = this.props; 
-
-    return (
-      <div className="login-register-page">
-        <div className="form">
-          <RegisterReduxForm onSubmit={registerUser} />
-        </div>
-      </div>
-    )
-  }
-}
+const Register = ({ registerUser }) =>
+  <div className="login-register-page">
+    <div className="form">
+      <RegisterReduxForm onSubmit={registerUser} />
+    </div>
+  </div>
 
 const mapDispatchToProps = dispatch => ({
   registerUser: (data) => {
@@ -28,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(
-  null,
-  mapDispatchToProps
+export default compose(
+  unauthenticated,
+  connect(null, mapDispatchToProps)
 )(Register);
