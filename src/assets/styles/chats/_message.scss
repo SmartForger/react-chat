@@ -1,0 +1,38 @@
+.message {
+  display: flex;
+  margin: 1.5em 0;
+
+  .headline {
+    margin-top: 4px;
+  }
+
+  .avatar {
+    flex: none;
+    margin-right: 15px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    flex: 1;
+    
+    .name {
+      font-size: 1.15em;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    .time {
+      color: #D3D4D7;
+    }
+    
+    .msg-text {
+      margin-top: 0.75em;
+      line-height: 1.5em;
+    }
+  }
+}

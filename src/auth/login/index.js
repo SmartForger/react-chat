@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 import LoginReduxForm from './form';
-import { loginUserAttempt } from '../../core/actions';
+import { Creators as Actions } from '../../core/actions';
 import { unauthenticated } from '../../common/components';
 
 const LoginPage = ({ token, login }) =>
@@ -14,7 +14,7 @@ const LoginPage = ({ token, login }) =>
   </div>
 
 const mapDispatchToProps = dispatch => ({
-  login: (data) => dispatch(loginUserAttempt(data))
+  login: (data) => dispatch(Actions.loginUserAttempt(data))
 })
 
 export default compose(

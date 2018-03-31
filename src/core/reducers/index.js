@@ -5,9 +5,11 @@ import { routerReducer } from 'react-router-redux'
 
 import apiReducer from './api-reducer';
 import userReducer from './user-reducer';
+import chatsReducer from '../../home/reducers'
 
 export default combineReducers({
   api: apiReducer,
+  chats: chatsReducer,
   user: userReducer,
   form: formReducer,
   toastr: toastrReducer,
