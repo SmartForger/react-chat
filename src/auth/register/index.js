@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { registerUserAttempt } from '../../core/actions';
+import { Creators as Actions } from '../../core/actions';
 import RegisterReduxForm from './form';
 import { unauthenticated } from '../../common/components';
 
@@ -15,7 +15,7 @@ const Register = ({ registerUser }) =>
 
 const mapDispatchToProps = dispatch => ({
   registerUser: (data) => {
-    dispatch(registerUserAttempt({
+    dispatch(Actions.registerUserAttempt({
       email: data.email,
       name: data.name,
       password: data.password

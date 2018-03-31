@@ -7,7 +7,7 @@ import AppRoutes from './routes';
 import configureStore from './core/configure-store';
 import registerServiceWorker from './registerServiceWorker';
 
-import './assets/index.css';
+import './assets/styles/index.css';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 const store = configureStore();

@@ -1,24 +1,78 @@
 
 import React, { Component } from 'react';
-import logo from '../assets/logo.svg';
-import './home.css';
-import { AppHeader } from '../common/components';
+import { connect } from 'react-redux';
+
+import { Creators as CoreActions } from '../core/actions';
+import { Creators as ChatActions } from './actions';
+
+import Sidebar from './components/sidebar';
+import ChatMain from './components/chat-main';
 
 class Home extends Component {
+
+  componentWillMount() {
+    const { setChannels, setDirectChannels } = this.props;
+
+    setChannels([
+      {
+        id: 'ch_general',
+        label: '#general'
+      },
+      {
+        id: 'ch_developers',
+        label: '#developers'
+      }
+    ]);
+
+    setDirectChannels([
+      {
+        id: 'dm_kks',
+        label: 'kks'
+      },
+      {
+        id: 'dm: kms',
+        label: 'kms'
+      }
+    ])
+  }
+
   render() {
+    const { channels, directChannels, user, logout } = this.props;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <AppHeader />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="chats">
+        <Sidebar
+          {...{
+            channels,
+            directChannels,
+            user,
+            logout
+          }}
+        />
+        <ChatMain />
       </div>
     );
   }
+
 }
 
-export default Home;
+const mapStateToProps = ({ chats, user }) => ({
+  channels: chats.channels,
+  directChannels: chats.directChannels,
+  user: user.info
+})
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(CoreActions.setToken('')),
+  setChannels: (channels) => {
+    dispatch(ChatActions.setChannels(channels))
+  },
+  setDirectChannels: (directChannels) => {
+    dispatch(ChatActions.setDirectChannels(directChannels))
+  }
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

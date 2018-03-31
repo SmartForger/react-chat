@@ -1,0 +1,19 @@
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px 8px 10px;
+
+  .date-line {
+    border-bottom: 1px solid #ccc;
+    position: relative;
+
+    span {
+      margin: -10px auto;
+      background: white;
+      position: absolute;
+      padding: 5px 10px;
+      margin-left: 50%;
+      transform: translate(-50%, -13%);
+    }
+  }
+}
