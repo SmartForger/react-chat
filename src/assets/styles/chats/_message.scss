@@ -4,6 +4,7 @@
 
   .headline {
     margin-top: 4px;
+    margin-bottom: 1em;
   }
 
   .avatar {
@@ -31,8 +32,9 @@
     }
     
     .msg-text {
-      margin-top: 0.75em;
+      margin-top: 0.5em;
       line-height: 1.5em;
+      color: black;
     }
   }
 }

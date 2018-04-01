@@ -136,7 +136,8 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    text-transform: uppercase; }
   .sidebar-group .group-list {
     margin-top: 12px; }
     .sidebar-group .group-list .item {
@@ -161,7 +162,8 @@ body {
   display: flex;
   margin: 1.5em 0; }
   .message .headline {
-    margin-top: 4px; }
+    margin-top: 4px;
+    margin-bottom: 1em; }
   .message .avatar {
     flex: none;
     margin-right: 15px; }
@@ -178,8 +180,9 @@ body {
     .message .content .time {
       color: #D3D4D7; }
     .message .content .msg-text {
-      margin-top: 0.75em;
-      line-height: 1.5em; }
+      margin-top: 0.5em;
+      line-height: 1.5em;
+      color: black; }
 
 .chats {
   display: flex; }
