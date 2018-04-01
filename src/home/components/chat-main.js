@@ -9,7 +9,7 @@ class ChatMain extends Component {
   handleKeydown = (ev) => {
     if (ev.keyCode === 13 && !ev.shiftKey) {
       this.props.send(ev.target.value);
-      console.log(ev.target.value);
+      ev.target.value = '';
       ev.preventDefault();
     }
   }
