@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 
 import { Creators as CoreActions } from '../core/actions';
 import { Creators as ChatActions } from './actions';
-
+import groupMessages from './selectors';
 import Sidebar from './components/sidebar';
 import ChatMain from './components/chat-main';
+import ChatSocket from './socket';
 
 class Home extends Component {
 
   componentWillMount() {
-    const { setChannels, setDirectChannels } = this.props;
+    const { setChannels, setDirectChannels, token, getDispatch, getChats } = this.props;
 
     setChannels([
       {
@@ -34,10 +35,25 @@ class Home extends Component {
         label: 'kms'
       }
     ])
+
+    this.socket = new ChatSocket(token, getDispatch());
+    getChats();
+  }
+
+  sendChat = (text) => {
+    this.socket.sendMessage(text);
   }
 
   render() {
-    const { channels, directChannels, user, logout } = this.props;
+    const {
+      channels,
+      directChannels,
+      messages,
+      user,
+      logout
+    } = this.props;
+
+    console.log(messages);
 
     return (
       <div className="chats">
@@ -49,7 +65,12 @@ class Home extends Component {
             logout
           }}
         />
-        <ChatMain />
+        <ChatMain
+          {...{
+            messages,
+            send: this.sendChat
+          }}
+        />
       </div>
     );
   }
@@ -59,7 +80,9 @@ class Home extends Component {
 const mapStateToProps = ({ chats, user }) => ({
   channels: chats.channels,
   directChannels: chats.directChannels,
-  user: user.info
+  messages: groupMessages(chats),
+  user: user.info,
+  token: user.token
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -69,7 +92,11 @@ const mapDispatchToProps = dispatch => ({
   },
   setDirectChannels: (directChannels) => {
     dispatch(ChatActions.setDirectChannels(directChannels))
-  }
+  },
+  getChats: () => {
+    dispatch(ChatActions.getChatsAttempt());
+  },
+  getDispatch: () => dispatch
 })
 
 export default connect(

@@ -7,3 +7,10 @@ export const registerUser = (data) =>
 
 export const loginUser = (data) =>
   axios.post(baseURL + '/auth/login', data);
+
+export const getChats = (token) =>
+  axios.get(baseURL + '/chats', {
+    headers: {
+      'x-access-token': token
+    }
+  });
