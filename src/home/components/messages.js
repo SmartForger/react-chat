@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import Message from './message';
 
-import data from './sample-data';
-
 const Messages = ({ data }) =>
   <div className="messages">
     {data.map((dailyData, i) =>
@@ -20,11 +18,11 @@ const Messages = ({ data }) =>
   </div>
 
 Messages.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.object)
+  data: PropTypes.arrayOf(PropTypes.object)
 }
 
 Messages.defaultProps = {
-  data: data
+  data: []
 }
 
 export default Messages;

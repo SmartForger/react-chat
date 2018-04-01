@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ avatar, name, time, msgs }) =>
+const Message = ({ avatar, name, formattedTime, msgs }) =>
   <div className="message">
     <div className="avatar">
       <img src={avatar} alt=""/>
@@ -9,7 +9,7 @@ const Message = ({ avatar, name, time, msgs }) =>
     <div className="content">
       <div className="headline">
         <span className="name">{name}</span>
-        <span className="time">{time}</span>
+        <span className="time">{formattedTime}</span>
       </div>
       {msgs && msgs.map((text, i) =>
         <div key={`msgb-${i}`} className="msg-text">
@@ -24,14 +24,14 @@ const Message = ({ avatar, name, time, msgs }) =>
 Message.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string,
-  time: PropTypes.string,
+  formattedTime: PropTypes.string,
   msgs: PropTypes.arrayOf(PropTypes.string)
 }
 
 Message.defaultProps = {
   avatar: 'logo.svg',
   name: '',
-  time: '',
+  formattedTime: '',
   msgs: []
 }
 
