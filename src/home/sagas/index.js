@@ -10,7 +10,6 @@ function* getChatsAttempt({ data }) {
     const { user } = yield select();
     const { data: response } = yield getChats(user.token);
     yield put(CoreActions.apiSuccess());
-    console.log(response);
     yield put(ChatActions.addMessages(response));
   } catch (err) {
     yield put(CoreActions.apiFailed());

@@ -53,8 +53,6 @@ class Home extends Component {
       logout
     } = this.props;
 
-    console.log(messages);
-
     return (
       <div className="chats">
         <Sidebar
