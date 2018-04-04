@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import { AuthFormField } from '../../common/components';
+import { MyFormField } from '../../common/components';
 
 const RegisterForm = ({ handleSubmit }) => (
   <form className="register-form" onSubmit={handleSubmit}>
     <Field
       name="email"
-      component={AuthFormField}
+      component={MyFormField}
       type="email"
       label="Email"
     />
     <Field
       name="name"
-      component={AuthFormField}
+      component={MyFormField}
       type="text"
       label="Name"
     />
     <Field
       name="password"
-      component={AuthFormField}
+      component={MyFormField}
       type="password"
       label="Password"
     />
     <Field
       name="confirm"
-      component={AuthFormField}
+      component={MyFormField}
       type="password"
       label="Confirm Password"
     />

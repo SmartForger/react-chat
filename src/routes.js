@@ -7,6 +7,7 @@ import { ProtectedRoute, NotFound } from './common/components';
 import Home from './home';
 import Login from './auth/login';
 import Register from './auth/register';
+import WorkspaceLayout from './workspace/layout';
 
 const appRoutes = ({ history }) => (
   <ConnectedRouter history={history}>
@@ -14,6 +15,7 @@ const appRoutes = ({ history }) => (
       <Switch>
         <Redirect exact from="/" to="/home"/>
         <ProtectedRoute path="/home" component={Home}/>
+        <Route path="/workspace" component={WorkspaceLayout}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
         <Route path="*" component={NotFound}/>

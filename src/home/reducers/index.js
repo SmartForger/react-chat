@@ -6,7 +6,8 @@ import { Types } from '../actions';
 const initialState = {
   channels: [],
   directChannels: [],
-  messages: []
+  messages: [],
+  sending: ''
 }
 
 const setChannels = (state, { channels }) => ({
@@ -30,8 +31,16 @@ const addMessages = (state, { msgs }) => {
   };
 }
 
+const setSending = (state, { sending }) => {
+  return {
+    ...state,
+    sending
+  }
+}
+
 export default createReducer(initialState, {
   [Types.SET_CHANNELS]: setChannels,
   [Types.SET_DIRECT_CHANNELS]: setDirectChannels,
-  [Types.ADD_MESSAGES]: addMessages
+  [Types.ADD_MESSAGES]: addMessages,
+  [Types.SET_SENDING]: setSending,
 })

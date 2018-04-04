@@ -1,10 +1,10 @@
 import ProtectedRoute from './protected-route';
-import AuthFormField from './auth-form-field';
+import MyFormField from './form-field';
 import NotFound from './not-found';
 import unauthenticated from './unauthenticated';
 
 export {
-  AuthFormField,
+  MyFormField,
   ProtectedRoute,
   NotFound,
   unauthenticated

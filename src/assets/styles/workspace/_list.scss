@@ -1,0 +1,17 @@
+.workspace-list {
+  ul {
+    margin: 0;
+    padding: 30px;
+    font-size: 1.2em;
+    list-style: none;
+  }
+
+  li {
+    margin: 1em 0;
+    display: flex;
+
+    span {
+      width: 40%;
+    }
+  }
+}

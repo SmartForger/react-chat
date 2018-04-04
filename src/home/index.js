@@ -37,11 +37,17 @@ class Home extends Component {
     ])
 
     this.socket = new ChatSocket(token, getDispatch());
+    this.socket.connect('general');
     getChats();
   }
 
   sendChat = (text) => {
     this.socket.sendMessage(text);
+  }
+
+  logout = () => {
+    this.socket.disconnect();
+    this.props.logout();
   }
 
   render() {
@@ -50,7 +56,6 @@ class Home extends Component {
       directChannels,
       messages,
       user,
-      logout
     } = this.props;
 
     return (
@@ -60,7 +65,7 @@ class Home extends Component {
             channels,
             directChannels,
             user,
-            logout
+            logout: this.logout
           }}
         />
         <ChatMain

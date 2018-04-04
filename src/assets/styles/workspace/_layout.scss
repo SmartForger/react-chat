@@ -1,0 +1,32 @@
+@import 'list';
+
+.workspace-layout {
+  .wrapper {
+    padding: 60px;
+  }
+
+  .react-tabs {
+    &__tab-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      border-bottom: 2px solid #ccc;
+      position: relative;
+    }
+
+    &__tab {
+      padding: 16px 32px;
+      text-align: center;
+      margin-bottom: -2px;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      outline: none;
+
+      &--selected {
+        border-bottom-color: #f300b2;
+        cursor: default;
+      }
+    }
+  }
+}
