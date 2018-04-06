@@ -13,12 +13,12 @@ const appRoutes = ({ history }) => (
   <ConnectedRouter history={history}>
     <div>
       <Switch>
-        <Redirect exact from="/" to="/home"/>
-        <ProtectedRoute path="/home" component={Home}/>
-        <Route path="/workspace" component={WorkspaceLayout}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
-        <Route path="*" component={NotFound}/>
+        <Redirect exact from="/" to="/workspace"/>
+        <Route exact path="/workspace" component={WorkspaceLayout}/>
+        <ProtectedRoute path="/:workspace_name/home" component={Home}/>
+        <Route path="/:workspace_name/login" component={Login}/>
+        <Route path="/:workspace_name/register" component={Register}/>
+        {/* <Route path="/:workspace_name/*" component={NotFound}/> */}
       </Switch>
       <ReduxToastr
         timeOut={4000}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const WorkspaceList = ({ list }) =>
   <div className="workspace-list">
@@ -7,7 +8,7 @@ const WorkspaceList = ({ list }) =>
       {list.map((item, i) =>
         <li key={`wl-${i}`}>
           <span>{item.name}</span>
-          <a href={`localhost:3000/${item.url}`}>{`localhost:3000/${item.url}`}</a>
+          <Link to={`/${item.slug}`}>{`localhost:3000/${item.slug}`}</Link>
         </li>
       )}
     </ul>

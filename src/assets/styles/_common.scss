@@ -1,0 +1,49 @@
+.form-field {
+  margin-bottom: 15px;
+  text-align: left;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    outline: 0;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+
+    &:active, &:focus {
+      border-bottom-color: #3D3175;
+    }
+  }
+
+  .error {
+    color: red;
+    display: block;
+    margin-top: 4px;
+    margin-left: 8px;
+  }
+}
+
+.button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 20px;
+  max-width: 400px;
+
+  &:hover, &:active, &:focus {
+    background: #43A047;
+  }
+}

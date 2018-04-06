@@ -6,10 +6,10 @@ const MyFormField = ({
   type,
   meta: { touched, error}
 }) => (
-  <div>
+  <div className="form-field">
     <input {...input} placeholder={label} type={type} />
     {touched && error &&
-       <span className="error">{error}</span>}
+      <span className="error">{error}</span>}
   </div>
 )
 

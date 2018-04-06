@@ -36,7 +36,7 @@ WorkspaceLayout.defaultProps = {
     },
     {
       name: 'TestWorkspace',
-      slug: '/testworkspace'
+      slug: 'testworkspace'
     }
   ]
 }
