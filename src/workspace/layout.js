@@ -31,13 +31,9 @@ WorkspaceLayout.propTypes = {
 WorkspaceLayout.defaultProps = {
   list: [
     {
-      name: 'JinYan Co., LTD',
-      slug: 'jinyan'
+      name: 'Test Workspace1',
+      slug: 'test1'
     },
-    {
-      name: 'TestWorkspace',
-      slug: 'testworkspace'
-    }
   ]
 }
 

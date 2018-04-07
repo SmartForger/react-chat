@@ -18,7 +18,7 @@ const appRoutes = ({ history }) => (
         <ProtectedRoute path="/:workspace_name/home" component={Home}/>
         <Route path="/:workspace_name/login" component={Login}/>
         <Route path="/:workspace_name/register" component={Register}/>
-        {/* <Route path="/:workspace_name/*" component={NotFound}/> */}
+        <Route path="*" component={NotFound}/>
       </Switch>
       <ReduxToastr
         timeOut={4000}

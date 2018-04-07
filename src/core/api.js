@@ -14,3 +14,9 @@ export const getChats = (token) =>
       'x-access-token': token
     }
   });
+
+export const getWorkspaces = () =>
+  axios.get(baseURL + '/workspaces');
+
+export const sendEmail = (email) =>
+  axios.post(baseURL + '/workspaces/sendEmail', { email });

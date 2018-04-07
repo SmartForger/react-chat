@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { MyFormField } from '../../common/components';
 
-const LoginForm = ({ handleSubmit }) => (
+const LoginForm = ({ handleSubmit, location }) => (
   <form className="register-form" onSubmit={handleSubmit}>
     <Field
       name="email"
