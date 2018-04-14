@@ -9,7 +9,7 @@ function* handleSuccess(response) {
   yield put(Creators.apiSuccess());
   yield put(Creators.setUserInfo(response.user));
   yield put(Creators.setToken(response.token));
-  toastr.success('Welcome ' + response.user.name + '!');
+  toastr.success('Welcome ' + response.user.username + '!');
 }
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
@@ -17,7 +17,7 @@ function* registerUserAttempt({ data }) {
   try {
     const { data: response } = yield registerUser(data);
     yield call(handleSuccess, response);
-    toastr.success('Welcome ' + response.user.name + '!');
+    toastr.success('Welcome ' + response.user.username + '!');
   } catch (err) {
     yield put(Creators.apiFailed());
     toastr.error('Registration Failed', err.response.data);

@@ -18,13 +18,13 @@ export default class ChatSocket {
       this.socket.close();
     });
 
-    this.socket.on('receivemsg', (data) => {
+    this.socket.on('receive', (data) => {
       this.dispatch(Actions.addMessages([ data.msg ]));
     });
   }
 
   sendMessage(text) {
-    this.socket.emit('sendchat', text);
+    this.socket.emit('send', text);
   }
 
   disconnect() {
