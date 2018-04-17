@@ -27,12 +27,12 @@ class Home extends Component {
 
     setDirectChannels([
       {
-        id: 'dm_kks',
-        label: 'kks'
+        id: 'dm_john',
+        label: 'john'
       },
       {
-        id: 'dm: kms',
-        label: 'kms'
+        id: 'dm_david',
+        label: 'david'
       }
     ])
 
