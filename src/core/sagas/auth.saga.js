@@ -17,7 +17,6 @@ function* registerUserAttempt({ data }) {
   try {
     const { data: response } = yield registerUser(data);
     yield call(handleSuccess, response);
-    toastr.success('Welcome ' + response.user.username + '!');
   } catch (err) {
     yield put(Creators.apiFailed());
     toastr.error('Registration Failed', err.response.data);

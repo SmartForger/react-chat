@@ -17,7 +17,7 @@ const Sidebar = ({channels, directChannels, user, logout}) =>
       />
     </div>
     <Dropdown
-      label={user.name}
+      label={user.username}
       items={[
         {
           label: 'Log out',

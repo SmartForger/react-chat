@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
   registerUser: (data) => {
     dispatch(Actions.registerUserAttempt({
       email: data.email,
-      name: data.name,
+      username: data.name,
       password: data.password
     }));
   }
