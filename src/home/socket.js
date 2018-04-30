@@ -3,7 +3,7 @@ import { Creators as Actions } from './actions';
 
 export default class ChatSocket {
   constructor(token, dispatch) {
-    this.socket = io('http://localhost:8000', { query: "token=" + token });
+    this.socket = io('https://reslack-api.herokuapp.com', { query: "token=" + token });
     this.dispatch = dispatch;
 
     this.setupSocket();
